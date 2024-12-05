@@ -87,9 +87,3 @@ document.addEventListener('scroll', () => {
     const scale = 1 + (scrolled / 1000); // Change the divisor to adjust sensitivity
     image.style.transform = `scale(${scale})`
 });
-
-document.addEventListener("DOMContentLoaded", function() {
-    var scroll = new SmoothScroll('.navMenu a', {
-        speed: 800
-    });
-});
