@@ -98,7 +98,8 @@ body {
 }
 
 .hire_me:hover {
-    background-color: #2980b9;
+    color: #000000;
+    background-color: #fddb3a;
 }
 
 :root{
@@ -456,5 +457,48 @@ h3 {
     font-size: 16px;
     margin-bottom: 20px;
     transform: translateZ(25px);
+}
+
+.about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh; /* Ensures it takes full screen height */
+    background-color: transparent; /* Background color for contrast */
+    color: white; /* Makes the text white */
+    padding: 2rem;
+}
+
+.about-section h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #fff; /* White title */
+}
+
+.about-container {
+    max-width: 800px; /* Limits width for better readability */
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.about-container ul {
+    list-style-type: none; /* Removes bullets */
+    padding: 0;
+}
+
+.about-container ul li {
+    margin: 0.5rem 0;
+}
+
+.about-container h3 {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    color: #ffeb3b; /* Optional: Add some variety, like yellow for subtitles */
+}
+
+.about-container p {
+    margin: 1rem 0;
 }
 
