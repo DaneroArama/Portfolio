@@ -464,43 +464,65 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    padding: 0 0 50px 0;
+    background-color: transparent;
+    color: white;
     text-align: center;
-    min-height: 100vh; /* Ensures it takes full screen height */
-    background-color: transparent; /* Background color for contrast */
-    color: white; /* Makes the text white */
-    padding: 0;
 }
 
 .about-section h2 {
     font-size: 3rem;
-    margin-bottom: 1rem;
-    color: #fff; /* White title */
+    margin-bottom: 2rem;
+    color: #fff;
+    position: relative;
 }
 
-.about-container {
-    max-width: 800px; /* Limits width for better readability */
-    margin: 0 auto;
+.about-section h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #ffeb3b;
+    margin: 0.5rem auto 0;
+}
+
+.about-content {
+    max-width: 900px;
+    width: 100%;
+}
+
+.intro p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
     line-height: 1.8;
 }
 
-.about-container ul {
-    list-style-type: none; /* Removes bullets */
+.fun-facts {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    text-align: left;
+    width: 100%;
+    max-width: 600px;
+}
+
+.fun-facts ul {
+    list-style: none;
     padding: 0;
 }
 
-.about-container ul li {
-    margin: 0.5rem 0;
+.fun-facts ul li {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 1.5rem;
 }
 
-.about-container h3 {
-    margin-top: 2rem;
-    font-size: 1.5rem;
-    color: #ffeb3b; /* Optional: Add some variety, like yellow for subtitles */
-}
-
-.about-container p {
-    margin: 1rem 0;
+.fun-facts ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #ffeb3b;
 }
 
 .footer {
