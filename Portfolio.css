@@ -1,0 +1,460 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #000000;
+    font-family: "Montserrat", sans-serif;
+}
+
+.navMenu {
+    position: sticky; /* Ensures the nav stays at the top as you scroll */
+    top: 0;
+    right: 0; /* Aligns the right side properly */
+    background-color: black; /* Sets the background to black */
+    padding: 10px; /* Adjusts the padding around the nav */
+    z-index: 1000; /* Keeps the nav above other content */
+    display: flex; /* Flexbox for easy alignment */
+    align-items: center;
+    width: 100%;
+}
+
+.navMenu a {
+    color: #f6f4e6;
+    text-decoration: none;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: inline-block;
+    margin-left: 25px; /* Space between links */
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+.navMenu a:first-child {
+    margin-left: 0; /* Removes left margin from the first link */
+}
+
+.navMenu a:hover {
+    color: #fddb3a;
+}
+
+.navMenu .dot {
+    width: 6px;
+    height: 6px;
+    background: #fddb3a;
+    border-radius: 50%;
+    opacity: 0;
+    position: absolute;
+    top: 50px; /* Adjusts the vertical position of the dot */
+    left: 25px; /* Adjust this to control the dot's position under the first link */
+    transform: translateX(30px);
+    transition: all 0.2s ease-in-out;
+}
+
+/* Adjustments to ensure the dot moves correctly based on hover */
+.navMenu a:nth-child(1):hover ~ .dot {
+    transform: translateX(20px);
+    opacity: 1;
+}
+
+.navMenu a:nth-child(2):hover ~ .dot {
+    transform: translateX(120px);
+    opacity: 1;
+}
+
+.navMenu a:nth-child(3):hover ~ .dot {
+    transform: translateX(245px);
+    opacity: 1;
+}
+
+.navMenu a:nth-child(4):hover ~ .dot {
+    transform: translateX(360px);
+    opacity: 1;
+}
+
+.hire_me {
+    margin-left: auto; /* Pushes the 'Hire me' link to the far right */
+    color: #fddb3a;
+    text-decoration: none;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.hire_me:hover {
+    background-color: #2980b9;
+}
+
+:root{
+    --color: #333;
+}
+
+.profile-picture {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-picture img {
+    max-width: 50%;
+    background: transparent;
+    display: block;
+    width: auto; /* Maintain original width */
+    height: auto; /* Maintain original height */
+    border: none; /* Remove any border */
+    mix-blend-mode: screen; /* Blend the image with the background */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Add transition for opacity */
+}
+
+.image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('Danero.png') no-repeat center center;
+    background-size: cover;
+    filter: blur(50px); /* Adjust blur to suit the effect */
+    transform: scale(1.1); /* Scale up to simulate the shattered effect */
+    transition: transform 0.5s ease-in-out;
+}
+
+.home-container.fading .profile-picture img {
+    opacity: 0; /* Fades out the image */
+    transform: scale(1.5);
+}
+
+.background-text {
+    position: absolute;
+    font-size: 10vw; /* Adjust the size based on your preference */
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 1; /* Ensures the text is behind the image */
+    white-space: nowrap;
+    padding-top: 350px;
+    mix-blend-mode: screen;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+h1 {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(3rem, 10vw, 10rem);
+    color: white;
+    padding: 0rem clamp(1rem, 2vw, 3rem);
+    border-radius: clamp(0.4rem, 0.75vw, 1rem);
+}
+
+h1:hover {
+    background-color: white;
+    color: black;
+}
+
+.container2 {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: white;
+}
+
+.about {
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
+    text-align: right;
+    font-size: 18px;
+    z-index: 3;
+    color: white;
+}
+.about p {
+    max-width: 52ch;
+    line-height: 0;
+    padding: 1em;
+}
+
+
+.container {
+    text-align: center;
+    color: var(--color);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-attachment: fixed;
+}
+
+.container1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: transparent; /* Background color */
+    overflow: hidden;
+}
+
+.blank, .other {
+    width: 100%;
+    min-height: 60vh;
+    background-color: var(--color);
+}
+
+.second {
+    background-image:url('Sky.jpg');
+    -o-background-size: auto;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+#services {
+    padding: 60px 20px;
+    background-color: #000000;
+    text-align: center;
+}
+
+#services h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service {
+    width: 250px;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.service.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service.scrolled-past {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.service:hover {
+    transform: translateY(-10px);
+}
+
+.service-icon {
+    width: 64px;
+    height: 64px;
+    fill: #fddb3a;
+    margin-bottom: 20px;
+}
+
+.service h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.service p {
+    font-size: 1em;
+    color: #f6f4e6;
+}
+
+h2{
+    color: #ffffff;
+}
+.card > a {
+    margin-bottom: 2em;
+}
+
+.cards {
+    background: #333333;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px 20px rgba(0,0,0,0.17);
+    display: inline-block;
+    padding: 30px 35px;
+    perspective: 1800px;
+    text-align: left;
+    transform-origin: 50% 50%;
+    transform-style: preserve-3d;
+    transform: rotateX(11deg) rotateY(16.5deg);
+    min-width: 595px;
+}
+
+.card {
+    border-radius: 15px;
+    box-shadow: 5px 5px 20px -5px rgba(0,0,0,0.6);
+// cursor: pointer;
+    display: inline-block;
+    height: 250px;
+    overflow: hidden;
+    perspective: 1200px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translatez(35px);
+    transition: transform 200ms ease-out;
+    width: 175px;
+    text-align: center;
+
+// &:hover {
+//   box-shadow: 5px 5px 20px -7px rgba(0,0,0,0.5);
+//   transform: translatez(60px);
+// }
+
+    &:not(:last-child) {
+        margin-right: 30px;
+    }
+}
+
+.card__img {
+    position: relative;
+    height: 100%;
+}
+
+.card__bg {
+    bottom: -50px;
+    left: -50px;
+    position: absolute;
+    right: -50px;
+    top: -50px;
+    transform-origin: 50% 50%;
+    transform: translateZ(-50px);
+    z-index: 0;
+}
+
+.card__one {
+    .card__img {
+        top: 14px;
+        right: -10px;
+        height: 110%;
+        backdrop-filter: blur();
+    }
+    .card__bg {
+        background: url('CS_Uni_Course.jpg') center / cover no-repeat;
+        backdrop-filter: blur();
+    }
+    .card__text {
+    //background-color: #254b60;
+    }
+}
+
+.card__two {
+    .card__img {
+        top: 25px;
+    }
+    .card__bg {
+        background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/62105/3dr_spirited.jpg') center / cover no-repeat;
+    }
+    .card__text {
+    //background-color: #274a2e;
+    }
+}
+
+.card__three {
+    .card__img {
+        top: 5px;
+        left: -4px;
+        height: 110%;
+    }
+    .card__bg {
+        background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/62105/3dr_howlbg.jpg') center / cover no-repeat;
+    }
+    .card__text {
+    //background-color: #3e2222;
+    }
+}
+
+.card__four {
+    .card__img {
+        top: 5px;
+        left: -4px;
+        height: 110%;
+    }
+    .card__bg {
+        background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/62105/3dr_howlbg.jpg') center / cover no-repeat;
+    }
+    .card__text {
+    //background-color: #3e2222;
+    }
+}
+
+.card__text {
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.55) 100%);
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    height: 70px;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+
+.card__title {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 0 10px;
+    margin-bottom: 3px;
+}
+
+.img {
+    width: 90%;
+    height: 200px;
+    background-color: lightgrey;
+    background-size: cover;
+    background-position: center;
+    margin-top: 20px;
+    border-radius: .3em;;
+}
+
+.second {
+    flex-direction: row;
+    gap: 1.6em;
+}
+
+h3 {
+    color: #ffeba7;
+    font-weight: 700;
+    margin-top: 1em;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transform: translateZ(25px);
+}
+
