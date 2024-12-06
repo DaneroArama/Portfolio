@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
     handleScroll(); // Initial call to set the effect on page load
 });
 
-const cards = document.querySelector(".cards");
+const cards = document.querySelector(".cards_container");
 const images = document.querySelectorAll(".card__img");
 const backgrounds = document.querySelectorAll(".card__bg");
 const range = 40;

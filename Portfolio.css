@@ -223,7 +223,7 @@ h1:hover {
 .blank, .other {
     width: 100%;
     min-height: 60vh;
-    background-color: var(--color);
+    background-color: transparent;
 }
 
 .second {
@@ -300,11 +300,12 @@ h1:hover {
 h2{
     color: #ffffff;
 }
+
 .card > a {
     margin-bottom: 2em;
 }
 
-.cards {
+.cards_container {
     background: #333333;
     border-radius: 15px;
     box-shadow: 0px 10px 20px 20px rgba(0,0,0,0.17);
@@ -318,122 +319,85 @@ h2{
     min-width: 595px;
 }
 
-.card {
-    border-radius: 15px;
-    box-shadow: 5px 5px 20px -5px rgba(0,0,0,0.6);
-// cursor: pointer;
-    display: inline-block;
-    height: 250px;
-    overflow: hidden;
-    perspective: 1200px;
-    position: relative;
-    transform-style: preserve-3d;
-    transform: translatez(35px);
-    transition: transform 200ms ease-out;
-    width: 175px;
-    text-align: center;
-
-// &:hover {
-//   box-shadow: 5px 5px 20px -7px rgba(0,0,0,0.5);
-//   transform: translatez(60px);
-// }
-
-    &:not(:last-child) {
-        margin-right: 30px;
-    }
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    transform-origin: 50% 50%;
+    transition: transform 300ms ease-out;
+    gap: 20px;
+    padding: 30px 20px;
 }
 
-.card__img {
+.card {
     position: relative;
-    height: 100%;
+    width: 200px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #222;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.05) rotateY(5deg);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.5);
 }
 
 .card__bg {
-    bottom: -50px;
-    left: -50px;
     position: absolute;
-    right: -50px;
-    top: -50px;
-    transform-origin: 50% 50%;
-    transform: translateZ(-50px);
-    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.8);
+    transition: filter 0.3s ease;
 }
 
-.card__one {
-    .card__img {
-        top: 14px;
-        right: -10px;
-        height: 110%;
-        backdrop-filter: blur();
-    }
-    .card__bg {
-        background: url('CS_Uni_Course.jpg') center / cover no-repeat;
-        backdrop-filter: blur();
-    }
-    .card__text {
-    //background-color: #254b60;
-    }
+.card:hover .card__bg {
+    filter: brightness(1);
 }
 
-.card__two {
-    .card__img {
-        top: 25px;
-    }
-    .card__bg {
-        background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/62105/3dr_spirited.jpg') center / cover no-repeat;
-    }
-    .card__text {
-    //background-color: #274a2e;
-    }
-}
+.card__img {
+    width: auto;
+    height: 100%;
+    object-fit: cover; /* Ensures proper scaling while preserving aspect ratio */
 
-.card__three {
-    .card__img {
-        top: 5px;
-        left: -4px;
-        height: 110%;
-    }
-    .card__bg {
-        background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/62105/3dr_howlbg.jpg') center / cover no-repeat;
-    }
-    .card__text {
-    //background-color: #3e2222;
-    }
-}
 
-.card__four {
-    .card__img {
-        top: 5px;
-        left: -4px;
-        height: 110%;
-    }
-    .card__bg {
-        background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/62105/3dr_howlbg.jpg') center / cover no-repeat;
-    }
-    .card__text {
-    //background-color: #3e2222;
-    }
+    backdrop-filter: blur();
+    scale: 1.2;
+    position: relative;
 }
 
 .card__text {
-    align-items: center;
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.55) 100%);
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    height: 70px;
-    justify-content: center;
     position: absolute;
+    bottom: 0;
     width: 100%;
-    z-index: 2;
+    padding: 15px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    transition: transform 0.3s ease;
+    transform: translateY(100%);
+}
+
+.card:hover .card__text {
+    transform: translateY(0);
 }
 
 .card__title {
-    color: #fff;
     font-size: 18px;
-    font-weight: 700;
-    padding: 0 10px;
-    margin-bottom: 3px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.card__desc {
+    font-size: 14px;
+    color: #bbb;
+    line-height: 1.4;
 }
 
 .img {
