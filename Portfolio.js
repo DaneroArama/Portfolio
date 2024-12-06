@@ -77,7 +77,7 @@ document.addEventListener('mousemove', ({x, y}) => {
 
 document.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
-    const container = document.querySelector('.home-container'); // Ensure this matches your HTML structure
+    const container = document.querySelector('.home-container');
 
     if (scrolled > 100) { // Adjust this threshold as needed
         container.classList.add('fading');
@@ -86,4 +86,8 @@ document.addEventListener('scroll', () => {
     }
     const scale = 1 + (scrolled / 1000); // Change the divisor to adjust sensitivity
     image.style.transform = `scale(${scale})`
+});
+
+document.getElementById("hireMeButton").addEventListener("click", function() {
+    window.location.href = "#hire";
 });
