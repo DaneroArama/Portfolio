@@ -111,8 +111,8 @@ body {
     position: relative;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    padding: 20px;
+    width: 150%;
+    padding: 10px;
 }
 
 .profile-picture img {
@@ -152,6 +152,7 @@ body {
     
     .about p {
         margin: 10px 0;
+        line-height: 1.5;
     }
     
     .background-text {
