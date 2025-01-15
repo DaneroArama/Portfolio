@@ -91,3 +91,23 @@ document.addEventListener('scroll', () => {
 document.getElementById("hireMeButton").addEventListener("click", function() {
     window.location.href = "#hire";
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const links = document.querySelectorAll('.nav-links a');
+
+    hamburger.addEventListener('click', () => {
+        // Toggle navigation
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+});
