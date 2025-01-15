@@ -236,33 +236,33 @@ h1:hover {
 }
 
 #services {
-    padding: 60px 20px;
+    padding: 40px 15px;
     background-color: #000000;
     text-align: center;
 }
 
 #services h2 {
-    font-size: 2.5em;
-    margin-bottom: 40px;
+    font-size: 2em;
+    margin-bottom: 30px;
     color: #ffffff;
 }
 
 .services-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
 .service {
-    width: 250px;
+    width: 100%;
     padding: 20px;
     background-color: #333;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    margin-bottom: 15px;
 }
 
 .service.show{
@@ -280,10 +280,10 @@ h1:hover {
 }
 
 .service-icon {
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
     fill: #fddb3a;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .service h3 {
@@ -632,5 +632,42 @@ img {
 @media screen and (max-width: 480px) {
     .about-content {
         width: 95%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #services {
+        padding: 30px 10px;
+    }
+    
+    .service {
+        padding: 15px;
+    }
+    
+    .service h3 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+    
+    .service p {
+        font-size: 0.9em;
+        line-height: 1.4;
+    }
+    
+    .service-icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+    
+    #services h2 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
     }
 }
