@@ -247,6 +247,14 @@ h1:hover {
     background-attachment: fixed;
 }
 
+@media screen and (max-width: 767px) {
+    .container {
+        height: 20vh;
+    }
+    .container1 {
+        height: 20vh;
+    }
+}
 .container1 {
     position: absolute;
     top: 50%;
