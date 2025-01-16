@@ -135,12 +135,12 @@ body {
     .profile-picture img {
         max-width: 100%; /* Larger size on mobile */
     }
-    
+
     .container1 {
         flex-direction: column; /* Stack elements vertically on mobile */
         padding: 20px;
     }
-    
+
     .about {
         position: relative; /* Change from absolute positioning */
         right: auto;
@@ -149,12 +149,12 @@ body {
         text-align: center;
         margin: 20px 0;
     }
-    
+
     .about p {
         margin: 10px 0;
         line-height: 1.5;
     }
-    
+
     .background-text {
         padding-top: 50px; /* Reduce top padding on mobile */
     }
@@ -369,13 +369,35 @@ h2{
     min-width: 595px;
 }
 
+@media screen and (max-width: 767px) {
+    .cards_container {
+        min-width: 100%; /* Ensure the container takes the full width of the viewport */
+    }
+
+    .card {
+        flex: 1 1 calc(50% - 1rem); /* Each card takes half the row width */
+        aspect-ratio: 4 / 3; /* Ensures the card maintains a standard rectangular shape */
+        box-sizing: border-box; /* Includes padding and border in the calculation */
+        display: flex;
+        flex-direction: column; /* Aligns content vertically inside the card */
+        justify-content: space-between; /* Ensures content is spaced properly */
+        align-items: center; /* Centers content horizontally */
+    }
+
+    .cards {
+        padding: 10px;
+        gap: 10px;
+    }
+}
+
+
 .cards{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     transform-origin: 50% 50%;
     transition: transform 300ms ease-out;
-    gap: 20px;
+    gap: 1rem;
     padding: 30px 20px;
 }
 
@@ -388,6 +410,7 @@ h2{
     background: #222;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    box-sizing: border-box;
 }
 
 .card:hover {
@@ -621,16 +644,16 @@ section {
   section {
     padding: 40px 0;
   }
-  
+
   .footer {
     padding: 15px 20px;
   }
-  
+
   /* Adjust social icons for mobile */
   .social-icon {
     padding: 0;
   }
-  
+
   .social-icon__item {
     margin: 0 10px;
   }
