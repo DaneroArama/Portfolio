@@ -371,7 +371,7 @@ h2{
 
 @media screen and (max-width: 767px) {
     .cards_container {
-        min-width: 100%; /* Ensure the container takes the full width of the viewport */
+        min-width: 110%; /* Ensure the container takes the full width of the viewport */
     }
 
     .card {
@@ -379,7 +379,7 @@ h2{
         aspect-ratio: 4 / 3; /* Ensures the card maintains a standard rectangular shape */
         box-sizing: border-box; /* Includes padding and border in the calculation */
         display: flex;
-        flex-direction: column; /* Aligns content vertically inside the card */
+        flex-direction: row; /* Aligns content vertically inside the card */
         justify-content: space-between; /* Ensures content is spaced properly */
         align-items: center; /* Centers content horizontally */
     }
