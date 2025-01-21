@@ -19,7 +19,7 @@ body {
 
 .navMenu {
     position: sticky; /* Ensures the nav stays at the top as you scroll */
-    top: 0;
+    top: 5;
     right: 0; /* Aligns the right side properly */
     background-color: transparent; /* Sets the background to black */
     padding: 10px; /* Adjusts the padding around the nav */
@@ -91,8 +91,8 @@ body {
 /* Position the Hire Me button */
 .hire_me {
     position: absolute; /* Change to absolute positioning */
-    top: 10px; /* Adjust as needed */
-    right: 20px; /* Adjust as needed */
+    top: 0; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
 }
 
 .hire_me a {
