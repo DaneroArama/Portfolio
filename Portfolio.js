@@ -24,6 +24,7 @@ document.querySelector("h1").onmouseover = event => {
         iteration += 1 / 3;
     }, 50);
 }
+
 document.addEventListener("DOMContentLoaded", function() {
     const services = document.querySelectorAll('.service');
 
@@ -50,8 +51,7 @@ const images = document.querySelectorAll(".card__img");
 const backgrounds = document.querySelectorAll(".card__bg");
 const range = 40;
 
-// const calcValue = (a, b) => (((a * 100) / b) * (range / 100) -(range / 2)).toFixed(1);
-const calcValue = (a, b) => (a/b*range-range/2).toFixed(1) // thanks @alice-mx
+const calcValue = (a, b) => (a/b*range-range/2).toFixed(1); // thanks @alice-mx
 
 let timeout;
 document.addEventListener('mousemove', ({x, y}) => {
@@ -60,19 +60,22 @@ document.addEventListener('mousemove', ({x, y}) => {
     }
 
     timeout = window.requestAnimationFrame(() => {
-        const yValue = calcValue(y, window.innerHeight);
-        const xValue = calcValue(x, window.innerWidth);
+        // Check if the screen width is greater than 768px
+        if (window.innerWidth > 768) {
+            const yValue = calcValue(y, window.innerHeight);
+            const xValue = calcValue(x, window.innerWidth);
 
-        cards.style.transform = `rotateX(${yValue}deg) rotateY(${xValue}deg)`;
+            cards.style.transform = `rotateX(${yValue}deg) rotateY(${xValue}deg)`;
 
-        [].forEach.call(images, (image) => {
-            image.style.transform = `translateX(${-xValue}px) translateY(${yValue}px)`;
-        });
+            [].forEach.call(images, (image) => {
+                image.style.transform = `translateX(${-xValue}px) translateY(${yValue}px)`;
+            });
 
-        [].forEach.call(backgrounds, (background) => {
-            background.style.backgroundPosition = `${xValue*.45}px ${-yValue*.45}px`;
-        })
-    })
+            [].forEach.call(backgrounds, (background) => {
+                background.style.backgroundPosition = `${xValue * 0.45}px ${-yValue * 0.45}px`;
+            });
+        }
+    });
 }, false);
 
 document.addEventListener('scroll', () => {
@@ -85,7 +88,7 @@ document.addEventListener('scroll', () => {
         container.classList.remove('fading');
     }
     const scale = 1 + (scrolled / 1000); // Change the divisor to adjust sensitivity
-    image.style.transform = `scale(${scale})`
+    image.style.transform = `scale(${scale})`;
 });
 
 document.getElementById("hireMeButton").addEventListener("click", function() {
