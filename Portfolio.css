@@ -19,7 +19,7 @@ body {
 
 .navMenu {
     position: sticky; /* Ensures the nav stays at the top as you scroll */
-    top: 5;
+    top: 5px;
     right: 0; /* Aligns the right side properly */
     background-color: transparent; /* Sets the background to black */
     padding: 10px; /* Adjusts the padding around the nav */
@@ -56,7 +56,7 @@ body {
     border-radius: 50%;
     opacity: 0;
     position: absolute;
-    top: 50px; /* Adjusts the vertical position of the dot */
+    top: 40px; /* Adjusts the vertical position of the dot */
     left: 25px; /* Adjust this to control the dot's position under the first link */
     transform: translateX(30px);
     transition: all 0.2s ease-in-out;
@@ -91,7 +91,6 @@ body {
 /* Position the Hire Me button */
 .hire_me {
     position: absolute; /* Change to absolute positioning */
-    top: 0; /* Adjust as needed */
     right: 10px; /* Adjust as needed */
 }
 
@@ -452,6 +451,7 @@ h2{
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 5px;
+    border-radius: 15px;
 }
 
 .card__desc {
@@ -460,14 +460,15 @@ h2{
     line-height: 1.4;
 }
 
-.img {
-    width: 90%;
-    height: 200px;
-    background-color: lightgrey;
-    background-size: cover;
-    background-position: center;
-    margin-top: 20px;
-    border-radius: .3em;;
+.card__img {
+    width: 100%; /* Ensure the image takes the full width of the card */
+    height: 100%; /* Ensure the image takes the full height of the card */
+    object-fit: contain; /* Ensure the entire image is visible */
+    transition: transform 1s ease; /* Smooth transition for zoom effect */
+}
+
+.card:hover .card__img {
+    filter: blur(0); /* Remove blur on hover */
 }
 
 .second {
