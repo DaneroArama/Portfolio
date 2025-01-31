@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 function sendEmail(event) {
     event.preventDefault(); // Prevent form from reloading
-    emailjs.sendForm('service_danero', 'template_daneroform', event.target) // Replace with correct Template ID
+    emailjs.sendForm('service_danero', 'template_danero', event.target) // Replace with correct Template ID
         .then(function(response) {
             alert("✅ Email sent successfully!");
             event.target.reset(); // Clear the form after submission
