@@ -11,5 +11,6 @@
     <orderEntry type="library" name="ionicons" level="application" />
     <orderEntry type="library" name="smooth-scroll" level="application" />
     <orderEntry type="library" name="ionicons" level="application" />
+    <orderEntry type="library" name="@emailjs/browser" level="application" />
   </component>
 </module>
