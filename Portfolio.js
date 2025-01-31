@@ -118,7 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
 (function(){
     emailjs.init("r3bv8qDGi_BhsK9Uy"); // Your EmailJS Public Key
 })();
-
 function sendEmail(event) {
     event.preventDefault(); // Prevent form from reloading
 
