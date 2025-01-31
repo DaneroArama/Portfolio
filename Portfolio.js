@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 (function(){
-    emailjs.init("m5iDulUfDmW8uAj3T"); // Your EmailJS Public Key
+    emailjs.init("r3bv8qDGi_BhsK9Uy"); // Your EmailJS Public Key
 })();
 
 function sendEmail(event) {
